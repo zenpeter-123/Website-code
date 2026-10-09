@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href = "{{ url_for('static',
+     filename= '/css/styles.css') }}">
+    {% block head %} {% endblock %}
+</head>
+<body style="text-align: center">
+        <header class="creative-header">
+            <div id="logo">atlas saw medusa</div>
+            <nav class="main-nav">
+                    <a href="{{url_for('index')}}"><li>Homepage</li></a>
+                    <a href="{{url_for('about')}}"><li>About me</li></a>
+                    <a href="{{url_for('contact')}}"><li>Contact</li></a>
+            </nav>
+        </header>
+        <hr>
+    {% block body %} 
+    {% endblock %}
+        <div class="lightbox">
+        <button id="close-btn">&times;</button>
+        <img id="lightbox-image">
+        </div>
+        <script src = "{{ url_for('static', filename='js/script.js') }}"></script>
+
+        <footer>
+            <hr>
+            <small>
+                &copy; Copyright reserved <br>
+                <a href="mailto:atlassawmedusa@gmail.com">Email</a>
+            </small>
+        </footer>
+</body>
+</html>

@@ -1,0 +1,91 @@
+{%extends 'base.html'%}
+
+    {% block head %} 
+<title>Task Master</title>
+    {% endblock %}
+
+    {% block body %}
+
+        <q>Egyetlen pillanat létezik csupán, 
+        amelyben fontos, hogy felébredj.
+        Ez a pillanat most van.</q> <br>
+
+        <button id="gomb">Idő</button>
+        <p id="uzi"></p>
+
+        <script>
+            document.getElementById("gomb").addEventListener("click", () => {
+                document.getElementById("uzi").textContent = 
+                "Most az idő: " + new Date().toLocaleTimeString('hu-HU')
+            });
+        </script>
+
+        <h1>Területek</h1>
+        <span class="box-container">
+            <span class="box open-modal" style="background-color: rgb(218, 177, 218);">
+                <strong>Analízis</strong> <br>
+            </span>
+            <span class="box open-modal" style="background-color: lightpink;">
+                <strong>Valószínűségszámítás</strong> <br>
+            </span>
+            <span class="box open-modal" style="background-color: lightyellow;">
+                <strong>Algebra </strong> <br>
+            </span>
+        </span>
+
+        <div class="modal-background">
+            <div class="modal-box">
+                <h2>Analízis</h2>
+                <p>Folyamatban... <br>
+                Tervezett: valós analízis, komplex analízis, topológia.
+                </p>
+                <span id="close-modal1" class="close-modal">
+                    &times;
+                </span>
+            </div>
+         </div>
+        <div id="modal2" class="modal-background">
+            <div class="modal-box">
+                <h2>Valószínűségszámítás</h2>
+                <p>Folyamatban... <br>
+                    Tervezett: klasszikus valszám,
+                    statisztika, becsléselmélet. <br>
+                    Jegyzet a témában: <a href="https://github.com/zenpeter-123/Markov-chains" target="_blank">link</a>
+                </p>
+                <span id="close-modal2" class="close-modal">
+                    &times;
+                </span>
+            </div>
+         </div>
+        <div id="modal3" class="modal-background">
+            <div class="modal-box">
+                <h2>Algebra</h2>
+                <p>Folyamatban... <br>
+                    Tervezett: klasszikus algebra,
+                    lineáris algebra, csoportelmélet.
+                </p>
+                <span id="close-modal3" class="close-modal">
+                    &times;
+                </span>
+            </div>
+         </div>
+
+        <h1>A Medúza-tekintet</h1>
+        <p>Élt egyszer egy hős, Perszeusznak hívták.
+            Nagy dicsőségnek örvendett.
+            Történt egyszer, hogy Perszeusz találkozott
+            Atlasszal, a titánnal, aki arra ítéltetett
+            hogy tartsa az eget. Atlasz kinézte Perszeuszt,
+            amire ő felmutatta neki Medúza levágott fejét,
+            amit egy csellel szerzett meg.
+            Ennek láttán a titán kővé dermedt,
+            és megalakult belőle az Atlasz-hegység.</p>
+        
+
+        <div class="lightbox">
+        <button id="close-btn">&times;</button>
+        <img id="lightbox-image">
+        </div>
+
+
+    {% endblock %}

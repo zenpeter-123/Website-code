@@ -1,0 +1,56 @@
+# Virtuális környezet
+env/
+venv/
+.venv/
+ENV/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# Adatbázis
+instance/
+*.db
+*.sqlite
+*.sqlite3
+
+# Környezeti változók
+.env
+.env.local
+.env.*.local
+
+# Log fájlok
+*.log
+
+# OS fájlok
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Mentések
+*.bak
+*.save
+*~
+
+# Teszt / coverage
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Node (ha van)
+node_modules/
+npm-debug.log*
+
+# Videók
+static/videos/*.mov
+static/videos/*.mp4
+*.mov
+*.mp4

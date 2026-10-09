@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block head %}<title>Admin</title>{% endblock %}
+
+{% block body %}
+<h1>Admin – Kurzusok</h1>
+
+<table>
+    <tr>
+        <th>Kurzus</th>
+        <th>Téma</th>
+        <th>Műveletek</th>
+    </tr>
+    {% for kurzus in kurzusok %}
+    <tr>
+        <td>{{ kurzus.cim }}</td>
+        <td>{{ kurzus.tema }}</td>
+        <td>
+            <a href="/admin/course/{{ kurzus.id }}/course_material">Tananyagok</a>
+            <a href="/admin/course/{{ kurzus.id }}/update">Szerkesztés</a> |
+            <a href="/admin/course/{{ kurzus.id }}/delete"
+               onclick="return confirm('Biztosan törlöd ezt a kurzust?');">Törlés</a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+
+<a href="/admin/new_course">Új kurzus</a>
+{% endblock %}

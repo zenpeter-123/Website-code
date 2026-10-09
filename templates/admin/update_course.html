@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block head %}<title>Kurzus szerkesztése</title>{% endblock %}
+
+{% block body %}
+<h1>Kurzus szerkesztése</h1>
+
+<form action="/admin/course/{{ kurzus.id }}/update" method="POST">
+    <div>
+        <label for="cim">Cím:</label><br>
+        <input type="text" name="cim" id="cim" value="{{ kurzus.cim }}" required>
+    </div>
+    <div>
+        <label for="tema">Téma:</label><br>
+        <input type="text" name="tema" id="tema" value="{{ kurzus.tema }}" required>
+    </div>
+    <div>
+        <label for="leiras">Leírás:</label><br>
+        <textarea name="leiras" id="leiras" rows="4">{{ kurzus.leiras }}</textarea>
+    </div>
+    <button type="submit">Mentés</button>
+    <a href="/admin">Mégse</a>
+</form>
+{% endblock %}

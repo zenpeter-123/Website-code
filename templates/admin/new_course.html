@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block head %}<title>Új kurzus</title>{% endblock %}
+
+{% block body %}
+<h1>Új kurzus létrehozása</h1>
+
+<form action="/admin/new_course" method="POST">
+    <div>
+        <label for="cim">Kurzus címe:</label><br>
+        <input type="text" name="cim" id="cim" required>
+    </div>
+    <div>
+        <label for="tema">Téma (azonosító):</label><br>
+        <input type="text" name="tema" id="tema" required>
+    </div>
+    <div>
+        <label for="leiras">Leírás:</label><br>
+        <textarea name="leiras" id="leiras" rows="4"></textarea>
+    </div>
+    <button type="submit">Létrehozás</button>
+    <a href="/admin">Mégse</a>
+</form>
+{% endblock %}

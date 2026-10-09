@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+    {% block head %} 
+        <title>About me</title>
+    {% endblock %}
+
+    {% block body %}
+        <h1>Magamról</h1>
+        <p>A nevem Patrik. Az ELTE matematikusaként végeztem 2026-ban.
+            Emellett érdekel az irodalom (jómagam is írok néha),
+            a kémia és a fejlesztés is (például az oldal amit nézel, az én művem).</p>
+
+        <h2>Valós történet alapján (de tényleg)</h2>
+        <img src="{{ url_for('static', filename='/images/szakdoga_meme.png') }}" style="max-width: 500px;">
+
+        <h2>Galéria</h2>
+
+        <div class="gallery">
+            <img class="gallery-item" src="{{ url_for('static', filename='/images/roses.jpg') }}">
+            <img class="gallery-item" src="{{ url_for('static', filename='/images/strawberries.jpg') }}">
+            <img class="gallery-item" src="{{ url_for('static', filename='/images/tulips.jpg') }}">
+        </div>
+
+        <div class="lightbox">
+            <button id="close-btn">&times;</button>
+            <img id="lightbox-image">
+        </div>
+    {% endblock %}
